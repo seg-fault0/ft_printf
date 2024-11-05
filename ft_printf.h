@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/04 12:32:56 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/05 12:17:01 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *format, ...);
-void	ft_putnbr(int nb);
+void	ft_putnbrdec(int nb);
+void	ft_putnbru(unsigned int i);
+void	ft_putnbrhex(unsigned int nb, const char *type);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
+void	ft_putptr(void *ptr);
 void	ft_putpercent(void);
-void	ft_putptr(va_arg(ap, void *));
 size_t	ft_strlen(const char *s);
 
 #endif

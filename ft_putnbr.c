@@ -6,57 +6,53 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/04 11:42:16 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/05 12:25:35 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	get_num_length(int n)
+void	ft_putnbru(unsigned int n)
 {
-	int	length;
-
-	if (n <= 0)
-		length = 1;
+	if (n >= 0 && n <= 9)
+		ft_putchar(n + '0');
 	else
-		length = 0;
-	while (n)
 	{
-		n /= 10;
-		length++;
+		ft_putnbru(n / 10);
+		ft_putnbru(n % 10);
 	}
-	return (length);
 }
 
-static char	*ft_itoa(int n)
+void	ft_putnbrdec(int nb)
 {
-	char	*result;
-	int		length;
-	long	num;
-
-	num = n;
-	length = get_num_length(n);
-	result = (char *)malloc(length + 1);
-	if (!result)
-		return (NULL);
-	result[length] = '\0';
-	if (num < 0)
+	if(nb == -2147483648)
 	{
-		result[0] = '-';
-		num = -num;
+		ft_putstr("-2147483648");
+		return ;
 	}
-	else if (num == 0)
-		result[0] = '0';
-	while (num > 0)
+	if (nb >= 0 && nb <= 9)
+		ft_putchar(nb + '0');
+	else
 	{
-		result[--length] = (num % 10) + '0';
-		num /= 10;
+		ft_putnbrdec(nb / 10);
+		ft_putnbrdec(nb % 10);
 	}
-	return (result);
 }
 
-void	ft_putnbr(int nb)
+void	ft_putnbrhex(unsigned int nb, const char *type)
 {
-	char *buffer = ft_itoa(nb);
-	write(1, buffer, ft_strlen(buffer));
+	if(nb >= 0 && nb <= 9)
+		ft_putchar(nb + '0');
+	else if (nb >= 10 && nb <= 15)
+	{
+		if(*type == 'x')
+			ft_putchar(nb + 87);
+		else if(*type == 'X')
+			ft_putchar(nb + 55);
+	}
+	else
+	{
+		ft_putnbrhex(nb / 16, type);
+		ft_putnbrhex(nb % 16, type);
+	}
 }

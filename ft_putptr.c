@@ -1,45 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/04 20:39:56 by wimam            ###   ########.fr       */
+/*   Created: 2024/11/05 12:12:54 by wimam             #+#    #+#             */
+/*   Updated: 2024/11/05 12:23:10 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putptr(void *ptr)
 {
-	size_t	len;
+	unsigned int	i;
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
-
-void	ft_putstr(char *str)
-{
-	while(*str)
-	{
-		write(1, str, 1);
-		str++;
-	}
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putpercent(void)
-{
-	char	c;
-	
-	c = '%';
-	write (1, &c, 1);
+	ft_putstr("0x10");
+	i = (int) ptr;
+	ft_putnbrhex(i, "x");
 }
