@@ -6,21 +6,11 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/04 20:39:56 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/05 15:20:41 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
-}
 
 void	ft_putstr(char *str)
 {
@@ -42,4 +32,13 @@ void	ft_putpercent(void)
 	
 	c = '%';
 	write (1, &c, 1);
+}
+
+void	ft_putptr(void *ptr)
+{
+	unsigned int	i;
+
+	ft_putstr("0x10");
+	i = (int) ptr;
+	ft_putnbrhex(i, "x");
 }
