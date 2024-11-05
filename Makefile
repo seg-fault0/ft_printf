@@ -1,15 +1,27 @@
-SRC = main.c ft_putstr.c ft_printf.c
+SRC =	ft_printf.c \
+		ft_puts.c	\
+		ft_putnbr.c	\
+	
+LIBNAME = libftprintf.a
 OBG = $(SRC:.c=.o)
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar -rc
 FLAGS = -Wall -Wextra -Werror
 
-all:
-	cc $(FLAGS) $(SRC)
+all: $(LIBNAME)
+
+$(LIBNAME) : $(OBG) ft_printf.h
+	$(AR) $@ $^
 
 %.o:%.c
 	cc -c $(FLAGS) $< -o $@
 
+fclean: clean
+	rm -f $(LIBNAME)
+
 clean:
-	rm -f *.o
+	rm -f $(OBG)
 
 re: all
 
