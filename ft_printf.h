@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/05 17:29:42 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/06 14:05:25 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 int		ft_printf(const char *format, ...);
 void	ft_putnbrdec(int nb);

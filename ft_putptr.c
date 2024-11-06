@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puts.c                                          :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 14:17:19 by wimam            ###   ########.fr       */
+/*   Created: 2024/11/06 14:10:42 by wimam             #+#    #+#             */
+/*   Updated: 2024/11/06 14:16:11 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+static void	ft_putnbrhexp(uintptr_t nb)
 {
-	while(*str)
+	if(nb >= 0 && nb <= 9)
+		ft_putchar(nb + '0');
+	else if (nb >= 10 && nb <= 15)
+			ft_putchar(nb + 87);
+	else
 	{
-		write(1, str, 1);
-		str++;
+		ft_putnbrhexp(nb / 16);
+		ft_putnbrhexp(nb % 16);
 	}
 }
 
-void	ft_putchar(char c)
+void	ft_putptr(void *ptr)
 {
-	write(1, &c, 1);
-}
+	uintptr_t	address;
 
-void	ft_putpercent(void)
-{
-	char	c;
-	
-	c = '%';
-	write (1, &c, 1);
+	ft_putstr("0x");
+	address = (uintptr_t)ptr;
+	ft_putnbrhexp(address);
 }
