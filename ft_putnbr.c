@@ -6,13 +6,29 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 13:31:30 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/06 18:30:26 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbru(unsigned int n)
+static int	num_len(int n)
+{
+	int	length;
+
+	if (n <= 0)
+		length = 1;
+	else
+		length = 0;
+	while (n)
+	{
+		n /= 10;
+		length++;
+	}
+	return (length);
+}
+
+int	ft_putnbru(unsigned int n)
 {
 	if (n >= 0 && n <= 9)
 		ft_putchar(n + '0');
@@ -21,10 +37,14 @@ void	ft_putnbru(unsigned int n)
 		ft_putnbru(n / 10);
 		ft_putnbru(n % 10);
 	}
+	return (num_len(n));
 }
 
-void	ft_putnbrdec(int nb)
+int	ft_putnbrdec(int nb)
 {
+	int	ret;
+
+	ret = num_len(nb);
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -33,7 +53,7 @@ void	ft_putnbrdec(int nb)
 	if(nb == -2147483648)
 	{
 		ft_putstr("-2147483648");
-		return ;
+		return (11);
 	}
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + '0');
@@ -42,22 +62,31 @@ void	ft_putnbrdec(int nb)
 		ft_putnbrdec(nb / 10);
 		ft_putnbrdec(nb % 10);
 	}
+	return (ret);
 }
 
-void	ft_putnbrhex(unsigned int nb, const char *type)
+int	ft_putnbrhex(unsigned int nb, const char *type)
 {
-	if(nb >= 0 && nb <= 9)
-		ft_putchar(nb + '0');
-	else if (nb >= 10 && nb <= 15)
+	int	len;
+
+	len = 0;
+	if (nb < 16)
 	{
-		if(*type == 'x')
-			ft_putchar(nb + 87);
-		else if(*type == 'X')
-			ft_putchar(nb + 55);
+		if(nb <= 9)
+			ft_putchar(nb + '0');
+		else
+		{
+			if(*type == 'x')
+				ft_putchar(nb + 87);
+			else if(*type == 'X')
+				ft_putchar(nb + 55);
+		}
+		len++;
 	}
 	else
 	{
-		ft_putnbrhex(nb / 16, type);
-		ft_putnbrhex(nb % 16, type);
+		len += ft_putnbrhex(nb / 16, type);
+		len += ft_putnbrhex(nb % 16, type);
 	}
+	return (len);
 }

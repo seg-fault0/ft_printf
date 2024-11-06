@@ -6,45 +6,51 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/05 17:29:23 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/06 18:37:44 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_format_specifier(const char *format, va_list ap)
+int	ft_format_specifier(const char *format, va_list ap)
 {
+	int	count;
+
+	count = 0;
 	while (*format == ' ')
 		format++;
 	if (*format == 'd' || *format == 'i')
-		ft_putnbrdec(va_arg(ap, int));
+		count = ft_putnbrdec(va_arg(ap, int));
 	else if (*format == 'u')
-		ft_putnbru(va_arg(ap, unsigned int));
+		count = ft_putnbru(va_arg(ap, unsigned int));
 	else if (*format == 'x' || *format == 'X')
-		ft_putnbrhex(va_arg(ap, unsigned int), (const char *) format);
+		count = ft_putnbrhex(va_arg(ap, unsigned int), (const char *) format);
 	else if (*format == 's')
-		ft_putstr(va_arg(ap, char *));
+		count = ft_putstr(va_arg(ap, char *));
 	else if (*format == 'c')
-		ft_putchar(va_arg(ap, int));
+		count = ft_putchar(va_arg(ap, int));
 	else if (*format == 'p')
-		ft_putptr(va_arg(ap, void *));
+		count = ft_putptr(va_arg(ap, void *));
 	else if (*format == '%')
-		ft_putpercent();
+		count = ft_putpercent();
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-
+	int		count;
+	
+	count = 0;
 	va_start (ap, format);
 	while (*format)
 	{
 		if (*format == '%')
-			ft_format_specifier(++format, ap);
+			count += ft_format_specifier(++format, ap);
 		else
-			write (1, format, 1);
+			count += write (1, format, 1);
 		format++;
 	}
 	va_end(ap);
-	return (0);
+	return (count);
 }

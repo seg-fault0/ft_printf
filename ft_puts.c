@@ -6,30 +6,37 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 14:17:19 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/06 17:48:42 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
+	int	count;
+
+	count = 0;
 	while(*str)
 	{
 		write(1, str, 1);
 		str++;
+		count++;
 	}
+	return (count);
 }
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
-void	ft_putpercent(void)
+int	ft_putpercent(void)
 {
 	char	c;
 	
 	c = '%';
 	write (1, &c, 1);
+	return (1);
 }
