@@ -6,7 +6,6 @@ SRC =	ft_printf.c \
 LIBNAME = libftprintf.a
 OBG = $(SRC:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
 AR = ar -rc
 FLAGS = -Wall -Wextra -Werror
 
@@ -26,4 +25,4 @@ clean:
 
 re: all
 
-.PHONY: prog all
+.PHONY: all fclean clean re
