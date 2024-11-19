@@ -3,22 +3,22 @@ SRC =	ft_printf.c \
 		ft_putnbr.c	\
 		ft_putptr.c	\
 	
-LIBNAME = libftprintf.a
+NAME = libftprintf.a
 OBG = $(SRC:.c=.o)
 CC = cc
 AR = ar -rc
 FLAGS = -Wall -Wextra -Werror
 
-all: $(LIBNAME)
+all: $(NAME)
 
-$(LIBNAME) : $(OBG) ft_printf.h
+$(NAME) : $(OBG)
 	$(AR) $@ $^
 
-%.o:%.c
+%.o:%.c ft_printf.h
 	cc -c $(FLAGS) $< -o $@
 
 fclean: clean
-	rm -f $(LIBNAME)
+	rm -f $(NAME)
 
 clean:
 	rm -f $(OBG)
