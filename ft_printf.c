@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 18:37:44 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/19 15:34:26 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		count;
-	
+
 	count = 0;
 	va_start (ap, format);
 	while (*format)

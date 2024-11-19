@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:10:42 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 18:37:21 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/19 15:35:21 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_putnbrhexp(uintptr_t nb)
 	len = 0;
 	if (nb < 16)
 	{
-		if(nb <= 9)
+		if (nb <= 9)
 			ft_putchar(nb + '0');
 		else
 			ft_putchar(nb + 87);

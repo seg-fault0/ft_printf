@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/06 17:48:42 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/19 15:34:17 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_putstr(char *str)
 	int	count;
 
 	count = 0;
-	while(*str)
+	while (*str)
 	{
 		write(1, str, 1);
 		str++;
@@ -35,7 +35,7 @@ int	ft_putchar(char c)
 int	ft_putpercent(void)
 {
 	char	c;
-	
+
 	c = '%';
 	write (1, &c, 1);
 	return (1);
