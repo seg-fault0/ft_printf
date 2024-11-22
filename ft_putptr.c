@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:10:42 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/19 15:35:21 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/23 00:47:27 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	ft_putptr(void *ptr)
 
 	ft_putstr("0x");
 	address = (uintptr_t)ptr;
-	return (ft_putnbrhexp(address));
+	return (ft_putnbrhexp(address) + 2);
 }

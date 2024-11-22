@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/19 15:34:26 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/23 00:42:58 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,12 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
+
+// #include <stdio.h>
+// int main()
+// {
+// 	int i = -1;
+// 	printf("ret = %d \n", ft_printf("%p", i));
+// 	printf("ret = %d \n", printf("%p", i));	
+// 	return (0);
+// }

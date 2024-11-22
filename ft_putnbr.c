@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/19 15:35:08 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/23 00:38:19 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ static int	num_len(int n)
 	return (length);
 }
 
+static int	u_num_len(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
 int	ft_putnbru(unsigned int n)
 {
 	if (n >= 0 && n <= 9)
@@ -37,7 +52,7 @@ int	ft_putnbru(unsigned int n)
 		ft_putnbru(n / 10);
 		ft_putnbru(n % 10);
 	}
-	return (num_len(n));
+	return (u_num_len(n));
 }
 
 int	ft_putnbrdec(int nb)
@@ -45,15 +60,15 @@ int	ft_putnbrdec(int nb)
 	int	ret;
 
 	ret = num_len(nb);
-	if (nb < 0)
-	{
-		nb *= -1;
-		ft_putchar('-');
-	}
 	if (nb == -2147483648)
 	{
 		ft_putstr("-2147483648");
 		return (11);
+	}
+	if (nb < 0)
+	{
+		nb *= -1;
+		ft_putchar('-');
 	}
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + '0');
