@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/22 22:51:49 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/27 00:03:48 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdint.h>
-# include <stdio.h>
-# include <limits.h> 
 
 int		ft_printf(const char *format, ...);
 int		ft_putnbrdec(int nb);
