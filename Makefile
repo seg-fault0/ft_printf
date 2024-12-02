@@ -8,6 +8,7 @@ OBG = $(SRC:.c=.o)
 CC = cc
 AR = ar -rc
 FLAGS = -Wall -Wextra -Werror
+RM = rm -f
 
 all: $(NAME)
 
@@ -15,13 +16,13 @@ $(NAME) : $(OBG)
 	$(AR) $@ $^
 
 %.o:%.c ft_printf.h
-	cc -c $(FLAGS) $< -o $@
+	$(CC) -c $(FLAGS) $< -o $@
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 clean:
-	rm -f $(OBG)
+	$(RM) $(OBG)
 
 re: fclean all
 

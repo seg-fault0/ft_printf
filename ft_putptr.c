@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:10:42 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/23 00:47:27 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:13:36 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_putnbrhexp(uintptr_t nb)
+static int	ft_putnbrhexp(size_t nb)
 {
 	int	len;
 
@@ -35,9 +35,6 @@ static int	ft_putnbrhexp(uintptr_t nb)
 
 int	ft_putptr(void *ptr)
 {
-	uintptr_t	address;
-
 	ft_putstr("0x");
-	address = (uintptr_t)ptr;
-	return (ft_putnbrhexp(address) + 2);
+	return (ft_putnbrhexp((size_t)ptr) + 2);
 }
