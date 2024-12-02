@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/23 00:42:58 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:21:04 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_format_specifier(const char *format, va_list ap)
 	else if (*format == 'c')
 		count = ft_putchar(va_arg(ap, int));
 	else if (*format == 'p')
-		count = ft_putptr(va_arg(ap, void *));
+		count = ft_putptr(va_arg(ap, size_t));
 	else if (*format == '%')
 		count = ft_putpercent();
 	return (count);

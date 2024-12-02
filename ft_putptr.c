@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:10:42 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/02 21:13:36 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/02 21:19:17 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static int	ft_putnbrhexp(size_t nb)
 	return (len);
 }
 
-int	ft_putptr(void *ptr)
+int	ft_putptr(size_t ptr)
 {
 	ft_putstr("0x");
-	return (ft_putnbrhexp((size_t)ptr) + 2);
+	return (ft_putnbrhexp(ptr) + 2);
 }
