@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/02 21:21:04 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/04 23:16:20 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	ft_printf(const char *format, ...)
 	va_start (ap, format);
 	while (*format)
 	{
-		if (*format == '%')
+		if (*format == '%' && *(format + 1) != '\0')
 			count += ft_format_specifier(++format, ap);
-		else
+		else if (*format != '%')
 			count += write (1, format, 1);
 		format++;
 	}
