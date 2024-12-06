@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/23 00:38:19 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/06 22:39:46 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	num_len(int n)
+static int	num_len(long n)
 {
 	int	length;
 
@@ -28,21 +28,6 @@ static int	num_len(int n)
 	return (length);
 }
 
-static int	u_num_len(unsigned int n)
-{
-	int	len;
-
-	len = 0;
-	if (n == 0)
-		return (1);
-	while (n)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
 int	ft_putnbru(unsigned int n)
 {
 	if (n >= 0 && n <= 9)
@@ -52,7 +37,7 @@ int	ft_putnbru(unsigned int n)
 		ft_putnbru(n / 10);
 		ft_putnbru(n % 10);
 	}
-	return (u_num_len(n));
+	return (num_len(n));
 }
 
 int	ft_putnbrdec(int nb)
@@ -80,7 +65,7 @@ int	ft_putnbrdec(int nb)
 	return (ret);
 }
 
-int	ft_putnbrhex(unsigned int nb, const char *type)
+int	ft_putnbrhex(unsigned long nb, const char *type)
 {
 	int	len;
 

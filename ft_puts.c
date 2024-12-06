@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/23 00:47:42 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/06 22:41:12 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,10 @@ int	ft_putpercent(void)
 	c = '%';
 	write (1, &c, 1);
 	return (1);
+}
+
+int	ft_putptr(size_t ptr)
+{
+	ft_putstr("0x");
+	return (ft_putnbrhex(ptr, "x") + 2);
 }

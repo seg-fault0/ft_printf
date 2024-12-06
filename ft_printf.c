@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/04 23:16:20 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/06 22:44:52 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start (ap, format);
+	if (write(1, 0, 0) == -1)
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
@@ -54,12 +56,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-
-// #include <stdio.h>
-// int main()
-// {
-// 	int i = -1;
-// 	printf("ret = %d \n", ft_printf("%p", i));
-// 	printf("ret = %d \n", printf("%p", i));	
-// 	return (0);
-// }

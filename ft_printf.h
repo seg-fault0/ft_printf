@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/02 21:19:39 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/06 22:40:00 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int		ft_printf(const char *format, ...);
 int		ft_putnbrdec(int nb);
 int		ft_putnbru(unsigned int i);
-int		ft_putnbrhex(unsigned int nb, const char *type);
+int		ft_putnbrhex(unsigned long nb, const char *type);
 int		ft_putstr(char *str);
 int		ft_putchar(char c);
 int		ft_putptr(size_t ptr);
