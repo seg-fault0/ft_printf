@@ -1,7 +1,6 @@
 SRC =	ft_printf.c \
 		ft_puts.c	\
 		ft_putnbr.c	\
-		ft_putptr.c	\
 	
 NAME = libftprintf.a
 OBG = $(SRC:.c=.o)

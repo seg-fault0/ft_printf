@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/06 22:39:46 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/07 23:54:49 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	num_len(long n)
 
 int	ft_putnbru(unsigned int n)
 {
-	if (n >= 0 && n <= 9)
+	if (n <= 9)
 		ft_putchar(n + '0');
 	else
 	{
