@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/07 23:54:49 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/08 23:08:12 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_putnbrdec(int nb)
 	return (ret);
 }
 
-int	ft_putnbrhex(unsigned long nb, const char *type)
+int	ft_putnbrhex(unsigned long nb, char type)
 {
 	int	len;
 
@@ -76,9 +76,9 @@ int	ft_putnbrhex(unsigned long nb, const char *type)
 			ft_putchar(nb + '0');
 		else
 		{
-			if (*type == 'x')
+			if (type == 'x')
 				ft_putchar(nb + 87);
-			else if (*type == 'X')
+			else if (type == 'X')
 				ft_putchar(nb + 55);
 		}
 		len++;

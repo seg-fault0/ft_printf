@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/06 22:44:52 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/08 23:07:47 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_format_specifier(const char *format, va_list ap)
 	else if (*format == 'u')
 		count = ft_putnbru(va_arg(ap, unsigned int));
 	else if (*format == 'x' || *format == 'X')
-		count = ft_putnbrhex(va_arg(ap, unsigned int), (const char *) format);
+		count = ft_putnbrhex(va_arg(ap, unsigned int), *format);
 	else if (*format == 's')
 		count = ft_putstr(va_arg(ap, char *));
 	else if (*format == 'c')

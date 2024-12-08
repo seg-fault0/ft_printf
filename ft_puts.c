@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/06 22:41:12 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/08 23:08:25 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ int	ft_putpercent(void)
 int	ft_putptr(size_t ptr)
 {
 	ft_putstr("0x");
-	return (ft_putnbrhex(ptr, "x") + 2);
+	return (ft_putnbrhex(ptr, 'x') + 2);
 }
