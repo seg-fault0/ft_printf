@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/10 20:31:02 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/10 21:01:28 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int		ft_putstr(char *str);
 int		ft_putchar(char c);
 int		ft_putptr(size_t ptr);
 int		ft_putpercent(void);
-size_t	ft_strlen(const char *s);
 
 #endif
