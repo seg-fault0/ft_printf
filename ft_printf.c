@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:43:28 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/08 23:07:47 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/10 20:31:41 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_format_specifier(const char *format, va_list ap)
 	int	count;
 
 	count = 0;
-	while (*format == ' ')
-		format++;
 	if (*format == 'd' || *format == 'i')
 		count = ft_putnbrdec(va_arg(ap, int));
 	else if (*format == 'u')

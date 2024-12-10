@@ -6,7 +6,7 @@
 /*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/08 23:07:59 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/10 20:31:02 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
-# include <stdint.h>
 
 int		ft_printf(const char *format, ...);
 int		ft_putnbrdec(int nb);
