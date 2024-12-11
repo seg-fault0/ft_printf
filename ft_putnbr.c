@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
+/*   By: wimam <walidimam@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:31:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/08 23:08:12 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/11 09:03:44 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ static int	num_len(long n)
 {
 	int	length;
 
+	length = 0;
 	if (n <= 0)
 		length = 1;
-	else
-		length = 0;
 	while (n)
 	{
 		n /= 10;
@@ -46,10 +45,7 @@ int	ft_putnbrdec(int nb)
 
 	ret = num_len(nb);
 	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return (11);
-	}
+		return (ft_putstr("-2147483648"));
 	if (nb < 0)
 	{
 		nb *= -1;

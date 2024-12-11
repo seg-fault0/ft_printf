@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
+/*   By: wimam <walidimam@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:14:54 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/10 21:01:28 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/11 09:03:52 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ int		ft_putnbrhex(unsigned long nb, char type);
 int		ft_putstr(char *str);
 int		ft_putchar(char c);
 int		ft_putptr(size_t ptr);
-int		ft_putpercent(void);
 
 #endif

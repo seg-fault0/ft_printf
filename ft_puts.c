@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puts.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wimam <walidimam69@gmail.com>              +#+  +:+       +#+        */
+/*   By: wimam <walidimam@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:50:21 by wimam             #+#    #+#             */
-/*   Updated: 2024/12/08 23:08:25 by wimam            ###   ########.fr       */
+/*   Updated: 2024/12/11 09:03:28 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,22 @@
 
 int	ft_putstr(char *str)
 {
-	int	count;
+	char	*count;
 
-	count = 0;
+	count = str;
 	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
+		return (write(1, "(null)", 6));
 	while (*str)
-	{
-		write(1, str, 1);
-		str++;
-		count++;
-	}
-	return (count);
+		write(1, str++, 1);
+	return (str - count);
 }
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
-}
-
-int	ft_putpercent(void)
-{
-	char	c;
-
-	c = '%';
-	write (1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putptr(size_t ptr)
 {
-	ft_putstr("0x");
-	return (ft_putnbrhex(ptr, 'x') + 2);
+	return ( ft_putstr ("0x") + ft_putnbrhex(ptr, 'x'));
 }
